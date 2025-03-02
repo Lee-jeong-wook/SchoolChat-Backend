@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController
 class AuthController() {
     @GetMapping("/email")
     fun getUserEmail(authentication: Authentication): Map<String, String> {
-        val response = mapOf("email" to authentication.name)
+        val response = mapOf("email" to authentication.principal.toString())
         return response
     }
 }

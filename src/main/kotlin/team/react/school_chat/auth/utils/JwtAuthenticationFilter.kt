@@ -8,16 +8,19 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.authority.SimpleGrantedAuthority
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.stereotype.Component
+import org.springframework.util.AntPathMatcher
 import org.springframework.web.filter.OncePerRequestFilter
 
 @Component
 class JwtAuthenticationFilter(
-    private val jwtProvider: JwtProvider
+    private val jwtProvider: JwtProvider,
 ) : OncePerRequestFilter() {
-    private val protectedPaths = listOf("/api/user/email")
+    private val protectedPaths = listOf("/api/user/email", "/member/**")
+
+    private val pathMatcher = AntPathMatcher()
 
     override fun shouldNotFilter(request: HttpServletRequest): Boolean {
-        return !protectedPaths.any { request.requestURI.startsWith(it) }
+        return !protectedPaths.any { pathMatcher.match(it, request.requestURI) }
     }
 
     override fun doFilterInternal(
@@ -25,8 +28,6 @@ class JwtAuthenticationFilter(
         response: HttpServletResponse,
         filterChain: FilterChain
     ) {
-        println("JWT Filter excute: ${request.requestURI}")
-
         val token = resolveToken(request)
 
         if (token != null && jwtProvider.validateToken(token)) {
