@@ -1,4 +1,4 @@
-package team.react.school_chat.global.utils
+package team.react.school_chat.global.auth
 
 
 data class OAuthAttributes(

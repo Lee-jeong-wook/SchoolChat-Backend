@@ -1,4 +1,4 @@
-package team.react.school_chat.domain.auth.domain
+package team.react.school_chat.domain.member.domain
 
 import jakarta.persistence.*
 

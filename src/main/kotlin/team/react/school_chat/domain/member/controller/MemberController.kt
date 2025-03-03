@@ -1,11 +1,10 @@
-package team.react.school_chat.domain.auth.controller
+package team.react.school_chat.domain.member.controller
 
 import org.springframework.security.core.Authentication
 import org.springframework.web.bind.annotation.*
-import team.react.school_chat.domain.auth.domain.Member
-import team.react.school_chat.domain.auth.dto.MemberDTO
-import team.react.school_chat.domain.auth.dto.MemberUpdateRequest
-import team.react.school_chat.domain.auth.service.MemberService
+import team.react.school_chat.domain.member.dto.MemberDTO
+import team.react.school_chat.domain.member.dto.MemberUpdateRequest
+import team.react.school_chat.domain.member.service.MemberService
 
 @RestController
 @RequestMapping("/member")

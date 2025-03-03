@@ -1,11 +1,11 @@
-package team.react.school_chat.domain.auth.service
+package team.react.school_chat.domain.member.service
 
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
-import team.react.school_chat.domain.auth.dto.MemberDTO
-import team.react.school_chat.domain.auth.dto.MemberUpdateRequest
-import team.react.school_chat.domain.auth.repository.MemberRepository
+import team.react.school_chat.domain.member.dto.MemberDTO
+import team.react.school_chat.domain.member.dto.MemberUpdateRequest
+import team.react.school_chat.domain.member.repository.MemberRepository
 import team.react.school_chat.global.exception.CustomException
 import team.react.school_chat.global.exception.ErrorCode
 
