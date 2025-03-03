@@ -17,15 +17,16 @@ class MemberController(val memberService: MemberService) {
     fun findByEmail(@PathVariable email: String) = this.memberService.findByEmail(email)
 
     @GetMapping("/my")
-    fun findMy(authentication: Authentication): Member {
+    fun findMy(authentication: Authentication): MemberDTO {
         val email = authentication.principal.toString()
+
         return this.memberService.findByEmail(email)
     }
 
     @PatchMapping("/{email}")
-    fun updateMember(@PathVariable email: String, @RequestBody member: MemberUpdateRequest, authentication: Authentication): Member {
+    fun updateMember(@PathVariable email: String, @RequestBody member: MemberUpdateRequest, authentication: Authentication): MemberDTO {
         val validEmail = authentication.principal.toString()
-        return this.memberService.updateMember(email, member, validEmail)
 
+        return this.memberService.updateMember(email, member, validEmail)
     }
 }
