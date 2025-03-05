@@ -1,7 +1,7 @@
-package team.react.school_chat.domain.member.dto
+package team.react.school_chat.domain.social.dto
 
-import team.react.school_chat.domain.member.domain.Friend
-import team.react.school_chat.domain.member.domain.FriendId
+import team.react.school_chat.domain.social.domain.Friend
+import team.react.school_chat.domain.social.domain.FriendId
 import team.react.school_chat.domain.member.domain.Member
 
 data class FriendDTO(

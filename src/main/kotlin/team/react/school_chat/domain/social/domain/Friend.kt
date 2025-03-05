@@ -1,6 +1,7 @@
-package team.react.school_chat.domain.member.domain
+package team.react.school_chat.domain.social.domain
 
 import jakarta.persistence.*
+import team.react.school_chat.domain.member.domain.Member
 
 @Entity
 @Table(name = "friend")
