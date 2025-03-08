@@ -1,6 +1,7 @@
-package team.react.school_chat.domain.auth.dto
+package team.react.school_chat.domain.member.dto
 
-import team.react.school_chat.domain.auth.domain.Member
+import team.react.school_chat.domain.member.domain.Member
+import team.react.school_chat.domain.social.dto.FriendDTO
 
 data class MemberDTO(
     val email: String,

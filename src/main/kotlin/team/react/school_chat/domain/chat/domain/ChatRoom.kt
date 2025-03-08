@@ -2,7 +2,7 @@ package team.react.school_chat.domain.chat.domain
 
 import jakarta.persistence.*
 import org.springframework.data.annotation.CreatedDate
-import team.react.school_chat.domain.auth.domain.Member
+import team.react.school_chat.domain.member.domain.Member
 import java.time.LocalDateTime
 
 @Entity

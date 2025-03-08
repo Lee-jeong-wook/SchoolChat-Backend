@@ -6,9 +6,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
 import org.springframework.security.web.SecurityFilterChain
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter
-import org.springframework.security.web.context.SecurityContextPersistenceFilter
 import team.react.school_chat.global.utils.JwtAuthenticationFilter
-import team.react.school_chat.global.utils.OAuth2LoginSuccessHandler
+import team.react.school_chat.global.auth.OAuth2LoginSuccessHandler
 
 @Configuration
 @EnableWebSecurity

@@ -1,4 +1,4 @@
-package team.react.school_chat.global.utils
+package team.react.school_chat.global.auth
 
 import jakarta.servlet.http.HttpServletRequest
 import jakarta.servlet.http.HttpServletResponse
@@ -6,6 +6,7 @@ import org.springframework.security.core.Authentication
 import org.springframework.security.oauth2.core.user.DefaultOAuth2User
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler
 import org.springframework.stereotype.Component
+import team.react.school_chat.global.utils.JwtProvider
 
 @Component
 class OAuth2LoginSuccessHandler(

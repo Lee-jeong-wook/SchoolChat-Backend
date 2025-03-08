@@ -1,4 +1,4 @@
-package team.react.school_chat.domain.auth.domain
+package team.react.school_chat.domain.social.domain
 
 import jakarta.persistence.Embeddable
 import java.io.Serializable

@@ -1,6 +1,7 @@
-package team.react.school_chat.domain.auth.domain
+package team.react.school_chat.domain.member.domain
 
 import jakarta.persistence.*
+import team.react.school_chat.domain.social.domain.Friend
 
 @Entity
 @Table(name = "member")
@@ -18,4 +19,4 @@ data class Member(
     @OneToMany(mappedBy = "owner", cascade= [(CascadeType.ALL)], orphanRemoval= true)
     var friends: MutableList<Friend> = mutableListOf(),
 
-)
+    )
