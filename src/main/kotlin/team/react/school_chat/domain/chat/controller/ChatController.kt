@@ -13,7 +13,7 @@ public class ChatController(private val messagingTemplate: SimpMessagingTemplate
     @MessageMapping("/chat.sendMessage")
     @SendTo("/topic/{roomId}")
     fun sendMessage(@Payload chat: Chat) {
-        messagingTemplate.convertAndSend("/topic/${chat.roomId}", chat)
+        messagingTemplate.convertAndSend("/topic/${chat.chatRoom.id}", chat)
     }
 
 }
