@@ -1,11 +1,28 @@
 package team.react.school_chat.domain.chat.domain
 
+import jakarta.persistence.*
 import java.time.LocalDateTime
 
+@Entity
+@Table(name = "chat")
 data class Chat(
-        val id: String? = null,
-        val userName: String? = null,
-        val content: String? = null,
+        @Id
+        @Column(name = "id", nullable = false)
+        val id: String,
+
+        @Column(name = "member_email", nullable = false)
+        val memberId: Long,
+
+        @Column(name = "user_name", nullable = false)
+        val userName: String,
+
+        @Column(name = "content", nullable = false)
+        val content: String,
+
+        @Column(name = "created_at", nullable = false)
         var createTime: LocalDateTime? = LocalDateTime.now(),
-        val roomId: String? = null
+
+        @ManyToOne(cascade = [(CascadeType.ALL)])
+        @JoinColumn(name = "room_id")
+        val chatRoom: ChatRoom
 )
