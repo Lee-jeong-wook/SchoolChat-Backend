@@ -10,7 +10,7 @@ class ChatService(private val chatRepository: ChatRepository){
     fun saveChat(chat: Chat){
         chatRepository.save(chat);
     }
-    fun findAllChatByMemberId(chatRoomId: Long): List<Chat>{
+    fun findAllChatByChatRoomId(chatRoomId: Long): List<Chat>{
         val li:List<Chat> = chatRepository.findAllChatByChatRoomId(chatRoomId);
         return li;
     }

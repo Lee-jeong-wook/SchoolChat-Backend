@@ -1,20 +1,20 @@
 package team.react.school_chat.domain.chat.domain
 
-import jakarta.persistence.Column
-import jakarta.persistence.Entity
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.GenerationType
-import jakarta.persistence.Id
+import jakarta.persistence.*
+import team.react.school_chat.domain.member.domain.Member
+import team.react.school_chat.domain.member.dto.MemberDTO
 
 @Entity
-data class ChatRoomMember (
+data class ChatRoomMember(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long,
+    val id: Long? = null,
 
-    @Column(name = "chatroom_id")
-    val chatRoomId: Long,
+    @ManyToOne(cascade = [CascadeType.REMOVE])
+    @JoinColumn(name = "chat_room_id", nullable = false)
+    val chatRoom: ChatRoom,
 
-    @Column(name = "member_email")
-    val memberId: String
+    @ManyToOne(cascade = [CascadeType.MERGE])
+    @JoinColumn(name = "member_email", nullable = false)
+    val member: Member
 )

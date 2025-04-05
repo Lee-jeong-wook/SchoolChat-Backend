@@ -19,7 +19,7 @@ class ChatRoomService (private val chatRoomRepository: ChatRoomRepository, priva
         throw CustomException(ErrorCode.NOT_FOUND, "존재하지 않는 채팅방입니다.")
     }
     fun findAllChatRoom(memberId: String): List<ChatRoom>{
-        val li: List<ChatRoom> = chatRoomMemberRepository.findAllChatRoomByMemberId(memberId);
+        val li: List<ChatRoom> = chatRoomMemberRepository.findAllChatRoomByMemberEmail(memberId);
         return li
     }
     fun checkMember(chatRoomId: Long, memberId: String): Boolean{
@@ -30,5 +30,8 @@ class ChatRoomService (private val chatRoomRepository: ChatRoomRepository, priva
     }
     fun saveChatRoomMember(chatRoomMember: ChatRoomMember){
         chatRoomMemberRepository.save(chatRoomMember);
+    }
+    fun saveChatRoomMembers(chatRoomMembers: List<ChatRoomMember>) {
+        chatRoomMemberRepository.saveAll(chatRoomMembers)
     }
 }
