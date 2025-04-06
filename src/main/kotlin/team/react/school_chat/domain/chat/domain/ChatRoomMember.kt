@@ -10,11 +10,11 @@ data class ChatRoomMember(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null,
 
-    @ManyToOne(cascade = [CascadeType.REMOVE])
+    @ManyToOne()
     @JoinColumn(name = "chat_room_id", nullable = false)
     val chatRoom: ChatRoom,
 
-    @ManyToOne(cascade = [CascadeType.MERGE])
+    @ManyToOne()
     @JoinColumn(name = "member_email", nullable = false)
     val member: Member
 )
